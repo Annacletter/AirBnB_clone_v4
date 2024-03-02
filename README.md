@@ -155,7 +155,7 @@ No known bugs at this time.
 
 ## Authors
 Annacletter Mafema - [Github](https://github.com/Annacletter) 
-Luleko Mkhize - [Github](https://github.com/lulekoh)
+Tinashe Navonika - 
 
 ## License
 Public Domain. No copy write protection. 
