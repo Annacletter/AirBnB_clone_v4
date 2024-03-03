@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- The magical gateway to the realm of web sorcery begins here -->
+    <meta charset="UTF-8">
+    <!-- Attire for the dance of pixels and style sheets -->
+    <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles/6-filters.css?{{ cache_id }}">
+    <!-- The iconic representation of our digital sanctuary -->
+    <link rel="icon" href="../static/images/icon.png" />
+    <!-- Summoning the wise sages of jQuery to aid in our quests -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Enchanting scripts to breathe life into our HTML canvas -->
+    <script src="/static/scripts/100-hbnb.js?{{ cache_id }}"></script>
+    <!-- The grand proclamation of our digital kingdom's name -->
+    <title>HBnB</title>
+  </head>
+  <body>
+    <!-- The majestic banners unfurl, heralding the dawn of a new adventure -->
+    <header>
+      <!-- The symbol of our noble house, a beacon of hope and unity -->
+      <div class="logo"></div>
+      <!-- The oracle's pronouncement, a measure of our kingdom's strength -->
+      <div id="api_status"></div>
+    </header>
+    <!-- The heart of our digital citadel, where dreams take shape and journeys begin -->
+    <div class="container">
+      <!-- The ancient scrolls of filtering magic, weaving destinies with every selection -->
+      <section class="filters">
+        <!-- The sacred tapestries of land and sky, where travelers chart their course -->
+        <div class="locations">
+          <!-- The cartographers' secrets revealed, pathways to realms both known and unknown -->
+          <h3>States</h3>
+          <!-- The whispers of distant winds, carrying tales of distant lands -->
+          <h4>&nbsp;</h4>
+          <!-- The treasure troves of knowledge, where each scroll holds the key to a new realm -->
+          <div class="popover">
+            <!-- The gallery of states, each a jewel in the crown of our kingdom -->
+            <ul>
+              <!-- The mystic incantations of the statekeepers, shaping the lands we traverse -->
+              {% for state in states %}
+              <!-- The guardian spirits of each state, guiding our way through the labyrinth of existence -->
+              <li>  
+                <!-- The sigils of power, markers of sovereignty and guardianship -->
+                <h2>
+                  <!-- The tokens of our allegiance, bound to the will of the chosen few -->
+                  <input type="checkbox" data-id="{{ state[0].id }}" data-name="{{ state[0].name }}" class="state_input">
+                  <!-- The names of our homelands, etched in the annals of history -->
+                  {{ state[0].name }}:
+                </h2>
+                <!-- The whispers of bustling cities, each a symphony of life and adventure -->
+                <ul>
+                  <!-- The hidden gems of our domain, waiting to be discovered by intrepid travelers -->
+                  {% for city in state[1] %}
+                  <!-- The gateways to untold wonders, each city a chapter in the saga of our kingdom -->
+                  <li><input type="checkbox" data-id="{{ city.id }}" data-name="{{ city.name }}" class="city_input"> {{ city.name }}</li>
+                  <!-- The echoes of footsteps, each step a journey unto itself -->
+                  {% endfor %}
+                </ul>
+              </li>
+              <!-- The chorus of voices, a testament to the diversity of our lands -->
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <!-- The sanctuaries of comfort and joy, where weary travelers find respite -->
+        <div class="amenities">
+          <!-- The emblems of luxury and relaxation, beckoning to the weary and the wise -->
+          <h3>Amenities</h3>
+          <!-- The whispers of tranquility, a melody that soothes the soul -->
+          <h4>&nbsp;</h4>
+          <!-- The wellsprings of delight, offering treasures beyond compare -->
+          <div class="popover">
+            <!-- The troves of wonder, where each amenity is a gem in the crown of our kingdom -->
+            <ul>
+              <!-- The treasures of our domain, scattered like stars across the night sky -->
+              {% for amenity in amenities %}
+              <!-- The symbols of comfort and joy, each amenity a blessing bestowed upon our realm -->
+              <li>
+                <!-- The tokens of our prosperity, tokens of gratitude to the gods of abundance -->
+                <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
+                <!-- The whispers of joy, each amenity a promise of bliss -->
+                {{ amenity.name }}
+              </
+
